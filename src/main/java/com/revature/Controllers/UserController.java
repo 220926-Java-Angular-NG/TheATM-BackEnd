@@ -1,7 +1,7 @@
-package com.revature.controllers;
+package com.revature.Controllers;
 
 import com.revature.Models.User;
-import com.revature.services.UserService;
+import com.revature.Services.UserService;
 import io.javalin.http.Handler;
 
 public class UserController {

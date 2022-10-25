@@ -1,7 +1,7 @@
 package com.revature;
 
-import com.revature.controllers.UserController;
-import com.revature.services.UserService;
+import com.revature.Controllers.UserController;
+import com.revature.Services.UserService;
 import io.javalin.Javalin;
 
 public class Main {
