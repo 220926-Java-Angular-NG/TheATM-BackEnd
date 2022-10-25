@@ -8,16 +8,30 @@ public class User {
     String username;
     String firstname;
     String lastname;
-    String password;
+    String pass_word;
     String phoneNum;
 
-    public User(String email, String username, int userId, String firstname, String lastname, String password, String phoneNum) {
+    public User()
+    {
+
+    }
+
+    public User(String email, String username, String firstname, String lastname, String pass_word, String phoneNum) {
         this.email = email;
         this.username = username;
-        this.userId = userId;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.password = password;
+        this.pass_word = pass_word;
+        this.phoneNum = phoneNum;
+    }
+
+    public User(int userId, String email, String username, String firstname, String lastname, String pass_word, String phoneNum) {
+        this.userId = userId;
+        this.email = email;
+        this.username = username;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.pass_word = pass_word;
         this.phoneNum = phoneNum;
     }
 
@@ -41,8 +55,8 @@ public class User {
         return lastname;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPass_word() {
+        return pass_word;
     }
 
     public String getPhoneNum() {
@@ -69,8 +83,8 @@ public class User {
         this.lastname = lastname;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPass_word(String pass_word) {
+        this.pass_word = pass_word;
     }
 
     public void setPhoneNum(String phoneNum) {
@@ -85,7 +99,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", password='" + password + '\'' +
+                ", pass_word='" + pass_word + '\'' +
                 ", phoneNum='" + phoneNum + '\'' +
                 '}';
     }

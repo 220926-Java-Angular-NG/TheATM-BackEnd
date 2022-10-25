@@ -12,6 +12,7 @@ public class UserService {
 
     public int createUser(User user)
     {
+        System.out.println("Inside service");
         return userRepo.create(user);
     }
 

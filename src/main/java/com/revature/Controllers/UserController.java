@@ -13,8 +13,9 @@ public class UserController {
 
 
     public Handler createUser = context->
-    {
+    {        System.out.println("Inside controller");
       User user = context.bodyAsClass(User.class);
+        System.out.println("After body as class");
       int id = userService.createUser(user);
       if(id>0)
       {
