@@ -1,5 +1,9 @@
 package com.revature.Models;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Transaction {
     int transId;
     int accountId;
@@ -22,6 +26,15 @@ public class Transaction {
         this.description = description;
         this.date = date;
     }
+    public Transaction(String from, String to, double amount, int accountId,
+                       String description, String date) {
+        this.from = from;
+        this.to = to;
+        this.amount = amount;
+        this.accountId = accountId;
+        this.description = description;
+        this.date = date;
+    }
 
     public int getTransId() {
         return transId;
@@ -37,6 +50,15 @@ public class Transaction {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public void setDate(){
+        if (this.date==null) {
+            Date newDate = new Date();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+            String strDate = dateFormat.format(newDate);
+            setDate(strDate);
+        }
     }
 
     @Override
