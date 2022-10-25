@@ -1,5 +1,6 @@
 package com.revature.Repos;
 
+
 import com.revature.Models.User;
 import com.revature.utils.ConnectionManager;
 
@@ -20,7 +21,6 @@ public class UserRepo {
             {
                 System.out.println(sqlException.getMessage());
             }
-
         }
     public int create (User user)
     {
@@ -33,7 +33,6 @@ public class UserRepo {
         {
             System.out.println(sqlException.getMessage());
         }
-
         System.out.println("Inside Repo");
         try
         {
@@ -66,5 +65,6 @@ public class UserRepo {
         }
         System.out.println("Makes it to zero");
         return 0;
+
     }
 }

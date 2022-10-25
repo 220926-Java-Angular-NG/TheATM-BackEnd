@@ -11,6 +11,7 @@ public class User {
     String pass_word;
     String phoneNum;
 
+
     public User()
     {
 
@@ -38,10 +39,10 @@ public class User {
     public int getUserId() {
         return userId;
     }
-
     public String getEmail() {
         return email;
     }
+
 
     public String getUsername() {
         return username;
@@ -63,6 +64,7 @@ public class User {
         return phoneNum;
     }
 
+
     public void setUserId(int userId) {
         this.userId = userId;
     }
@@ -70,7 +72,6 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
@@ -83,6 +84,7 @@ public class User {
         this.lastname = lastname;
     }
 
+
     public void setPass_word(String pass_word) {
         this.pass_word = pass_word;
     }
@@ -90,6 +92,7 @@ public class User {
     public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
+
 
     @Override
     public String toString() {
@@ -102,5 +105,7 @@ public class User {
                 ", pass_word='" + pass_word + '\'' +
                 ", phoneNum='" + phoneNum + '\'' +
                 '}';
-    }
+        }
+
+
 }

@@ -1,8 +1,10 @@
 package com.revature.Controllers;
 
+
 import com.revature.Models.User;
 import com.revature.Services.UserService;
 import io.javalin.http.Handler;
+
 
 public class UserController {
     UserService userService;
@@ -25,4 +27,5 @@ public class UserController {
       else
           context.result("User not created").status(400);
     };
+
 }
