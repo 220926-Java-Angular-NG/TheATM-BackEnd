@@ -17,7 +17,13 @@ public class Main {
         app.post("/user", userController.createUser);
         app.get("/user/{id}", userController.getUserById);
         app.put("/user", userController.updateUser);
+        
+      
+      
+      
+      
         //transactions
-        //app.post("/transfer",transController.transferMoney);
+        app.post("/transfer",transController.transferMoney);
+
     }
 }

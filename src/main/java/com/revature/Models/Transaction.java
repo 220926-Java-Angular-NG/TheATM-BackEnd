@@ -7,8 +7,8 @@ import java.util.Date;
 public class Transaction {
     int transId;
     int accountId;
-    String from;
-    String to;
+    int from;
+    int to;
     double amount;
     String description;
     String date;
@@ -16,7 +16,7 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(int transId, String from, String to, double amount, int accountId,
+    public Transaction(int transId, int from, int to, double amount, int accountId,
                        String description, String date) {
         this.transId = transId;
         this.from = from;
@@ -26,7 +26,7 @@ public class Transaction {
         this.description = description;
         this.date = date;
     }
-    public Transaction(String from, String to, double amount, int accountId,
+    public Transaction(int from, int to, double amount, int accountId,
                        String description, String date) {
         this.from = from;
         this.to = to;
@@ -55,7 +55,7 @@ public class Transaction {
     public void setDate(){
         if (this.date==null) {
             Date newDate = new Date();
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String strDate = dateFormat.format(newDate);
             setDate(strDate);
         }
@@ -66,7 +66,7 @@ public class Transaction {
         return "Transaction{" +
                 "transId=" + transId +
                 ", accountId=" + accountId +
-                ", from='" + from + '\'' +
+                ", from=    '" + from + '\'' +
                 ", to='" + to + '\'' +
                 ", amount=" + amount +
                 ", description='" + description + '\'' +
@@ -74,19 +74,19 @@ public class Transaction {
                 '}';
     }
 
-    public String getFrom() {
+    public int getFrom() {
         return from;
     }
 
-    public void setFrom(String from) {
+    public void setFrom(int from) {
         this.from = from;
     }
 
-    public String getTo() {
+    public int getTo() {
         return to;
     }
 
-    public void setTo(String to) {
+    public void setTo(int to) {
         this.to = to;
     }
 
