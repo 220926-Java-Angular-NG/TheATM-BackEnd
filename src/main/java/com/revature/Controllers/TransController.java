@@ -23,8 +23,8 @@ public class TransController {
             Transaction add = new Transaction(trans.getTo(), trans.getFrom(),trans.getAmount(),
                     trans.getAccountId(), trans.getDescription(), trans.getDate());
 
-            transService.createTransaction(subtract);
-            transService.createTransaction(add);
+            //transService.createTransaction(subtract);
+            //transService.createTransaction(add);Commented out to be able to test - Alvin
         }
     };
 }

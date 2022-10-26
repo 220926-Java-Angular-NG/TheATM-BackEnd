@@ -15,9 +15,8 @@ public class UserController {
 
 
     public Handler createUser = context->
-    {        System.out.println("Inside controller");
+    {
       User user = context.bodyAsClass(User.class);
-        System.out.println("After body as class");
       int id = userService.createUser(user);
       if(id>0)
       {
@@ -28,4 +27,34 @@ public class UserController {
           context.result("User not created").status(400);
     };
 
+    public Handler getUserById = context ->
+    {        System.out.println("Inside controller");
+        String param = context.pathParam("id");
+        User user;//Note, remove context body as class?
+               System.out.println("Param " + param);
+        try
+        {
+            int id = Integer.parseInt(param);
+            user = userService.getUserById(id);
+            System.out.println("Id " + id);
+            if(user != null)
+                context.json(user).status(200);
+            else
+                context.result("User not found").status(400);
+        }
+        catch(NumberFormatException numberFormatException)
+        {
+            System.out.println(numberFormatException.getMessage());
+        }
+    };
+
+    public Handler updateUser = context ->
+    {
+        User user = context.bodyAsClass(User.class);
+        user = userService.updateUser(user);
+        if(user != null)
+            context.json(user).status(200);
+        else
+            context.result("Can't update user").status(400);
+    };
 }
