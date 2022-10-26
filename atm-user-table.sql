@@ -7,3 +7,6 @@ lastname varchar(20) not null,
 pass_word varchar(20) not null,
 phoneNum varchar(20) not null
 );
+
+
+

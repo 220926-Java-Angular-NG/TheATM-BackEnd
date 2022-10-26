@@ -19,7 +19,7 @@ public class Main {
 
 
         //transactions
-        //app.post("/transfer",transController.transferMoney);
+        app.post("/transfer",transController.transferMoney);
 
 
 
