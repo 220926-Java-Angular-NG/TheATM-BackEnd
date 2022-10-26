@@ -8,7 +8,6 @@ import com.revature.Controllers.TransController;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
 
         Javalin app = Javalin.create(config->{config.enableCorsForAllOrigins();}).start(8080);
 
@@ -16,12 +15,9 @@ public class Main {
         TransController transController = new TransController();
         
         app.post("/user", userController.createUser);
-
-
+        app.get("/user/{id}", userController.getUserById);
+        app.put("/user", userController.updateUser);
         //transactions
         //app.post("/transfer",transController.transferMoney);
-
-
-
     }
 }
