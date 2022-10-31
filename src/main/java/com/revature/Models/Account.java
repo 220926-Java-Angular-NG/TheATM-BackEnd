@@ -6,9 +6,16 @@ public class Account {
     int accountId;
     String accountType;
     int ownerId;
-
     double amount;
 
+    public Account() {
+    }
+
+    public Account(String accountType, int ownerId, double amount) {
+        this.accountType = accountType;
+        this.ownerId = ownerId;
+        this.amount = amount;
+    }
 
     public Account(int accountId, String accountType, int ownerId, double amount) {
         this.accountId = accountId;
@@ -33,16 +40,12 @@ public class Account {
         this.accountType = accountType;
     }
 
-
     public int getOwnerId() {
         return ownerId;
     }
 
     public void setOwnerId(int ownerId) {
         this.ownerId = ownerId;
-    }
-
-    public Account() {
     }
 
     @Override

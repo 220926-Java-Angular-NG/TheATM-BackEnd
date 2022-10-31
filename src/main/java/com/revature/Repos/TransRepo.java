@@ -1,9 +1,12 @@
 package com.revature.Repos;
 
+import com.revature.Models.Account;
 import com.revature.Models.Transaction;
 import com.revature.utils.ConnectionManager;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TransRepo {
 
@@ -50,6 +53,38 @@ public class TransRepo {
 
         }
         catch(SQLException sqlException) {
+            System.out.println(sqlException.getMessage());
+        }
+
+        return null;
+    }
+
+    public List<Transaction> getAll(int accountId) {
+        List<Transaction> transactions = new ArrayList<Transaction>();
+
+        try {
+            String sql = "SELECT * FROM transactions WHERE account_id = ? ORDER BY trans_id";
+
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setInt(1, accountId);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Transaction transaction = new Transaction();
+                transaction.setTransId(resultSet.getInt("trans_id"));
+                transaction.setAccountId(resultSet.getInt("account_id"));
+                transaction.setFrom(resultSet.getInt("from_id"));
+                transaction.setTo(resultSet.getInt("from_id"));
+                transaction.setAmount(resultSet.getDouble("amount"));
+                transaction.setDescription(resultSet.getString("description"));
+                transaction.setDate(resultSet.getString("date_of_trans"));
+                transactions.add(transaction);
+            }
+
+            return transactions;
+
+        } catch (SQLException sqlException) {
             System.out.println(sqlException.getMessage());
         }
 

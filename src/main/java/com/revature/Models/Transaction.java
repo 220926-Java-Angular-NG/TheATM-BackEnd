@@ -26,6 +26,7 @@ public class Transaction {
         this.description = description;
         this.date = date;
     }
+
     public Transaction(int from, int to, double amount, int accountId,
                        String description, String date) {
         this.from = from;
