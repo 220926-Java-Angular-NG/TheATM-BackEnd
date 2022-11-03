@@ -32,6 +32,12 @@ build/
 
 ### VS Code ###
 .vscode/
+<<<<<<< HEAD
 =======
 jdbc.properties
 >>>>>>> main
+=======
+
+
+jdbc.properties
+>>>>>>> b17468d3f9021b524c5db5379b0c78ef335069eb
