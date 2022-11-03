@@ -23,5 +23,6 @@ public class User {
     String lastname;
     String pass_word;
     String phoneNum;
+    String resetPasswordKey;
 
 }
