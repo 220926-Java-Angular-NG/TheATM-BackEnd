@@ -27,6 +27,7 @@ public class TransController {
             Transaction add = new Transaction(trans.getFrom(), trans.getTo(),trans.getAmount(),
                     trans.getTo(), trans.getDescription(), trans.getDate());
 
+
             List<Transaction> transactions = new ArrayList();
             Transaction newTrans = transService.createTransaction(subtract);
             Transaction newTrans1 = transService.createTransaction(add);

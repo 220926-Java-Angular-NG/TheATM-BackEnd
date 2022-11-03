@@ -11,8 +11,16 @@ public class UserService {
 
     public int createUser(User user)
     {
-        System.out.println("Inside service");
         return userRepo.create(user);
+    }
+
+    public User getUserById(int id)
+    {        System.out.println("Inside Service");
+        return userRepo.getById(id);
+    }
+    public User updateUser(User user)
+    {
+        return userRepo.update(user);
     }
 
 }
