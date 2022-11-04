@@ -19,11 +19,11 @@ public class Transaction {
     @ManyToOne
     Account linkedTo;
 
-    @ManyToMany
+    @ManyToOne
     //@JsonIgnore
     Account from;
 
-    @ManyToMany
+    @ManyToOne
     //@JsonIgnore
     Account to;
 
