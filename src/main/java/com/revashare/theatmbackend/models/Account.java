@@ -1,8 +1,10 @@
 package com.revashare.theatmbackend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name="accounts")
 @Getter
@@ -19,5 +21,9 @@ public class Account {
 
     @ManyToOne
     User owner;
+
+    @ManyToMany
+    @JsonIgnore
+    List<Transaction> transactions;
 
 }
