@@ -9,4 +9,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AccountService {
     private final AccountRepo accountRepo;
+
+    public Account createAccount(Account account){
+        return accountRepo.save(account);
+    }
 }
