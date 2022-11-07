@@ -39,6 +39,7 @@ public class TransController {
         return transService.findAllTransactionsByLinkedToId(linkedToId);
     }
 
+
     @GetMapping("/sumOf/{linkedToId}")
     public Double getSumOfTransactionsOfLinkedToAccount(@PathVariable Integer linkedToId){
         return transService.sumAmountByLinkedToId(linkedToId);
