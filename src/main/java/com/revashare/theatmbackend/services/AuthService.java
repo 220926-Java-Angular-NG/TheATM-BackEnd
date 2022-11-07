@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+@Service
 public class AuthService {
     private final String SIGNING_KEY = "super-secret";
     private final Long HOUR = (1000L * 60 * 60);
