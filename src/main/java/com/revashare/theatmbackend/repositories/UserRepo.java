@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UserRepo extends JpaRepository <User, Integer> {
 
@@ -15,7 +17,8 @@ public interface UserRepo extends JpaRepository <User, Integer> {
     // @Query annotation defines SQL to execute, in this case need to find email
 
     @Query("SELECT u from User u WHERE u.email = ?1")
-    public User findByEmail(String email);
+    //public User findByEmail(String email);
+    Optional<User> findByEmail(String email);
     public User findByResetPasswordToken(String token);
 
 

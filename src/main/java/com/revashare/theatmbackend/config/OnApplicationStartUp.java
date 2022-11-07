@@ -29,7 +29,7 @@ public class OnApplicationStartUp {
 
     private void preloadData() {
         User bank = new User(1, "bank@bank.com", "bank", "bank",
-                "supersecret", "1234567890");
+                "supersecret", "1234567890", "");
         bank = userService.createUser(bank);
         List<String> stores = Arrays.asList("Job", "FlyNSwaggies", "MTGAllDay","WeScream4IceCream");
         for (int i=0;i< stores.size()-1;i++){
