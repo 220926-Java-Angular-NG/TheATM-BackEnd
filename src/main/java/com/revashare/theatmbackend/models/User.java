@@ -1,8 +1,10 @@
 package com.revashare.theatmbackend.models;
 
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Getter
@@ -34,4 +36,8 @@ public class User {
     @Column(name="reset_password_token")
     String resetPasswordToken;
 
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        //later we want this to be a list of granted authorities
+        return null;
+    }
 }
