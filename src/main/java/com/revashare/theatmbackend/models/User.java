@@ -6,7 +6,7 @@ import org.springframework.security.core.GrantedAuthority;
 import javax.persistence.*;
 import java.util.Collection;
 
-@Entity
+@Entity(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor

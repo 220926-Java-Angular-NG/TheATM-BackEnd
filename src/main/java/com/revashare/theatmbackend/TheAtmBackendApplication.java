@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.jdbc.core.JdbcTemplate;
 
 
-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class})
+@SpringBootApplication()
 public class TheAtmBackendApplication {
 	@Autowired
 	JdbcTemplate jdbcTemplate;

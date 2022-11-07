@@ -21,9 +21,8 @@ public class OnApplicationStartUp {
 
     @EventListener
     public void onApplicationEvent(ContextRefreshedEvent event) {
-
-        if (accountService.findAllAccountsByOwnerId(1, false)==null) {
-            preloadData();
+        if (accountService.findAllAccountsByOwnerId(1, false).size()<1){
+        preloadData();
         }
     }
 
@@ -31,7 +30,7 @@ public class OnApplicationStartUp {
         User bank = new User(1, "bank@bank.com", "bank", "bank",
                 "supersecret", "1234567890", "");
         bank = userService.createUser(bank);
-        List<String> stores = Arrays.asList("Job", "FlyNSwaggies", "MTGAllDay","WeScream4IceCream");
+        List<String> stores = Arrays.asList("Job", "FlyNSwaggies", "Los Seis Amigos Magic Shop","WeScream4IceCream");
         for (int i=0;i< stores.size()-1;i++){
             Account account = new Account(i, stores.get(i), bank, null);
             accountService.createAccount(account);

@@ -5,7 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name="transactions")
 @Getter
 @Setter
 @NoArgsConstructor

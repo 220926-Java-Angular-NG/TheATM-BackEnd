@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+
 @EnableWebSecurity
 public class AuthConfig extends WebSecurityConfigurerAdapter {
 
@@ -38,7 +39,7 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
+        http.cors();
         http.addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
@@ -46,4 +47,6 @@ public class AuthConfig extends WebSecurityConfigurerAdapter {
     public AuthenticationManager getAuthenticationManager() throws Exception {
         return super.authenticationManagerBean();
     }
+
+
 }

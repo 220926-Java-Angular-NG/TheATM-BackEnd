@@ -16,7 +16,7 @@ public interface UserRepo extends JpaRepository <User, Integer> {
     // that email
     // @Query annotation defines SQL to execute, in this case need to find email
 
-    @Query("SELECT u from User u WHERE u.email = ?1")
+    //@Query("SELECT u from User u WHERE u.email = ?1")
     //public User findByEmail(String email);
     Optional<User> findByEmail(String email);
     public User findByResetPasswordToken(String token);
