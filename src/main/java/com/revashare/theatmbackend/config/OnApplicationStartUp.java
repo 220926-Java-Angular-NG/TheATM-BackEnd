@@ -31,9 +31,10 @@ public class OnApplicationStartUp {
                 "supersecret", "1234567890", "");
         bank = userService.createUser(bank);
         List<String> stores = Arrays.asList("Job", "FlyNSwaggies", "Los Seis Amigos Magic Shop","WeScream4IceCream");
-        for (int i=0;i< stores.size()-1;i++){
-            Account account = new Account(i, stores.get(i), bank, null);
-            accountService.createAccount(account);
+        for (int i=0;i<= stores.size()-1;i++){
+            Account account = new Account(i+10, stores.get(i), bank, null);
+            System.out.println(account);
+            System.out.println("Return:" + accountService.createAccount(account));
         }
 
 

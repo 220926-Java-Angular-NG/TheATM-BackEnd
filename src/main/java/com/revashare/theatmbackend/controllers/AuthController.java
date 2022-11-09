@@ -40,16 +40,16 @@ public class AuthController {
     }
     @PostMapping("/transaction")
     public List<Transaction> subtractFrom_FromAndAddTo_To(@RequestBody Transaction trans){
-    Transaction subtract = new Transaction(trans.getId(),trans.getLinkedTo(),trans.getFrom(), trans.getTo(),
-            trans.getAmount()*-1, trans.getDescription(),trans.getDate_of_trans());
-    Transaction add = new Transaction(trans.getId(), trans.getTo(), trans.getFrom(), trans.getTo(),
-            trans.getAmount(), trans.getDescription(), trans.getDate_of_trans());
+        Transaction subtract = new Transaction(trans.getId(),trans.getLinkedTo(),trans.getFrom(), trans.getTo(),
+                trans.getAmount()*-1, trans.getDescription(),trans.getDate_of_trans());
+        Transaction add = new Transaction(trans.getId(), trans.getTo(), trans.getFrom(), trans.getTo(),
+                trans.getAmount(), trans.getDescription(), trans.getDate_of_trans());
 
 
-    subtract = transService.createTransaction(subtract);
-    add = transService.createTransaction(add);
+        subtract = transService.createTransaction(subtract);
+        add = transService.createTransaction(add);
 
-    List<Transaction> transactions = new ArrayList<>();
+        List<Transaction> transactions = new ArrayList<>();
         transactions.add(subtract);
         transactions.add(add);
 
