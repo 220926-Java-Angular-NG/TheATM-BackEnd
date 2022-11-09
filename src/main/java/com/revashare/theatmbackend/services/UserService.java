@@ -62,7 +62,7 @@ public class UserService {
         return generateAuthenticationResponse(findUserByEmail(authRequest.getEmail()));
     }
     private AuthResponse generateAuthenticationResponse(User user){
-        return new AuthResponse(authService.generateToken(user));
+        return new AuthResponse(authService.generateToken(user), user.getId());
     }
 
     public User findUserByEmail(String email){
