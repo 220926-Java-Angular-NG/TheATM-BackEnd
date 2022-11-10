@@ -16,6 +16,7 @@ public class AccountService {
     private final TransService transService;
 
     public Account createAccount(Account account){
+        System.out.println("Service:" + account);
         return accountRepo.save(account);
     }
 
