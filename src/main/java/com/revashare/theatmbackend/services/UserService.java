@@ -53,14 +53,17 @@ public class UserService {
         // try to authenticate the user
         // short circuit the execution with an exception
         // TODO: confirm the password being checked against the database is encoded first
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        authRequest.getEmail(), authRequest.getPassword())
-        );
-
-        // what we need to do now is get the user loaded, then generate the token/response
-        return generateAuthenticationResponse(findUserByEmail(authRequest.getEmail()));
+        User user = findUserByEmail(authRequest.getEmail());
+        System.out.println("Logged in:" + user + "Request: " + authRequest);
+        if (user.getPass_word().equals(authRequest.getPassword())) {
+            System.out.println("Logged in:" + user);
+            return generateAuthenticationResponse(user);
+        } else {
+            return new AuthResponse(null, 0);
+        }
     }
+        // what we need to do now is get the user loaded, then generate the token/response
+
     private AuthResponse generateAuthenticationResponse(User user){
         return new AuthResponse(authService.generateToken(user), user.getId());
     }
