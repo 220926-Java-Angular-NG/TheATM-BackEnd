@@ -40,6 +40,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public AuthResponse login(@RequestBody AuthRequest authRequest){
+        System.out.println(authRequest);
         return userService.loginUser(authRequest);
     }
     @PostMapping("/transaction")
