@@ -58,13 +58,13 @@ public class UserService {
             return generateAuthenticationResponse(user);
         } else {
             System.out.println("Password given does not match: " + authRequest + ":" + user);
-            return new AuthResponse(null, 0);
+            return new AuthResponse(null, user);
         }
     }
     // what we need to do now is get the user loaded, then generate the token/response
 
     private AuthResponse generateAuthenticationResponse(User user){
-        return new AuthResponse(authService.generateToken(user), user.getId());
+        return new AuthResponse(authService.generateToken(user), user);
     }
 
     public User findUserByEmail(String email){
