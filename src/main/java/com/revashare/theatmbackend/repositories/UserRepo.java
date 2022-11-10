@@ -18,7 +18,8 @@ public interface UserRepo extends JpaRepository <User, Integer> {
 
     //@Query("SELECT u from User u WHERE u.email = ?1")
     //public User findByEmail(String email);
-    Optional<User> findByEmail(String email);
+    @Query("SELECT u FROM User u WHERE u.email = ?1")
+    public User findByEmail(String email);
     public User findByResetPasswordToken(String token);
 
 

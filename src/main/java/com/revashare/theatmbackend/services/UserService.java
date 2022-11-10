@@ -7,6 +7,7 @@ import com.revashare.theatmbackend.models.DTO.AuthResponse;
 import com.revashare.theatmbackend.models.User;
 import com.revashare.theatmbackend.repositories.UserRepo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +20,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class UserService {
+    @Autowired
     private final UserRepo userRepo;
     private final AuthService authService;
     private final AuthenticationManager authenticationManager;
@@ -27,8 +29,7 @@ public class UserService {
     }
 
     public void updateResetPasswordToken(String token, String email) throws UserNotFoundException {
-        User user = userRepo.findByEmail(email)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+        User user = userRepo.findByEmail(email);
         if (user != null) {
             user.setResetPasswordToken(token);
             userRepo.save(user);
@@ -66,8 +67,8 @@ public class UserService {
     }
 
     public User findUserByEmail(String email){
-        return userRepo.findByEmail(email)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found with email: " + email));
+        return userRepo.findByEmail(email);
+                //.orElseThrow(() -> new ResourceNotFoundException("User not found with email: " + email));
     }
 
     public User loadUserByEmail(String email) throws UsernameNotFoundException {

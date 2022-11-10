@@ -30,7 +30,11 @@ public class AuthController {
 //    }
     @PostMapping("/register")
     public User createUser(@RequestBody User user){
-    return userService.createUser(user);
+
+        System.out.println(user);
+
+        return userService.createUser(user);
+
 }
 
 
