@@ -25,7 +25,27 @@ public class UserService {
     private final AuthService authService;
     private final AuthenticationManager authenticationManager;
 
-    public User createUser(User user) {return userRepo.save(user);
+    public User updateUser(User user) {
+
+        System.out.println(user);
+
+        User currentUser = findUserByEmail(user.getEmail());
+
+        if (currentUser == null) {
+            return null;
+        }
+
+        currentUser.setFirstname(user.getFirstname());
+        currentUser.setLastname(user.getLastname());
+        currentUser.setEmail(user.getEmail());
+        currentUser.setPass_word(user.getPass_word());
+        currentUser.setPhoneNum(user.getPhoneNum());
+
+        return userRepo.save(currentUser);
+    }
+
+    public User createUser(User user) {
+        return userRepo.save(user);
     }
 
     public void updateResetPasswordToken(String token, String email) throws UserNotFoundException {

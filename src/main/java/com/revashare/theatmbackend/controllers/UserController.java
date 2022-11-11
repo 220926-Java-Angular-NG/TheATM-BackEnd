@@ -18,4 +18,9 @@ public class UserController {
     public User createUser(@RequestBody User user){
         return userService.createUser(user);
     }
+
+    @PostMapping("/update")
+    public User updateUser(@RequestBody User user){
+        return userService.updateUser(user);
+    }
 }
