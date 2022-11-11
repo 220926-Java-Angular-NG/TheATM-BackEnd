@@ -26,9 +26,6 @@ public class UserService {
     private final AuthenticationManager authenticationManager;
 
     public User updateUser(User user) {
-
-        System.out.println(user);
-
         User currentUser = findUserByEmail(user.getEmail());
 
         if (currentUser == null) {

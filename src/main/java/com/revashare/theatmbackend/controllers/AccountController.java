@@ -28,4 +28,9 @@ public class AccountController {
         return accountService.findAllAccountsByOwnerId(id, getSum);
     }
 
+    @GetMapping("/ids")
+    public List<Integer> getAllAccountIds(){
+        return accountService.findAllAccountNumbers();
+    }
+
 }

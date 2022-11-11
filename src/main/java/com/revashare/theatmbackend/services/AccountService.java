@@ -20,6 +20,15 @@ public class AccountService {
         return accountRepo.save(account);
     }
 
+    public List<Integer> findAllAccountNumbers(){
+        List<Account> accounts =  accountRepo.findAll();
+        List<Integer> out = new ArrayList<>();
+        for (Account account:accounts){
+            out.add(account.getId());
+        }
+        return out;
+    }
+
     public List<AccountDTO> findAllAccountsByOwnerId(Integer id, Boolean getSum) {
         List<Account> accounts = accountRepo.findAllByOwnerId(id);
         List<AccountDTO> accountDTOList = accountToAccountDTO(accounts);
@@ -42,4 +51,5 @@ public class AccountService {
         }
         return  accountDTOList;
     }
+
 }
